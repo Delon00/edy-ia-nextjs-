@@ -377,6 +377,14 @@ body{
     padding-top: 0;
     padding-bottom: 0;
   }
+  .screenshot-a{
+    width: 60%;
+    height: 85%;
+  }
+  .screenshot-b{
+    width: 80%;
+    height: 70%;
+  }
 }
 @media only screen and (max-width: 500px) {
   .google-btn p,.apple-btn p,.facebook-btn p{font-size: 13px;}
