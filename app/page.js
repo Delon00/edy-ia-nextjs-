@@ -6,6 +6,7 @@ import Register from "./components/register/register";
 import { useState, useEffect } from "react";
 import Close from '../public/assets/images/icon-effacer-100.png';
 import UserProfile from '../public/assets/images/profile.png';
+import Cours from '../public/assets/images/cours.png';
 
 export default function Home() {
   const [showLoginForm, setShowLoginForm] = useState(false);
@@ -83,7 +84,7 @@ export default function Home() {
             <div class="home-section container">
               <div class="col-section-a md:w-1/2">
                 <h1 className="title-section">Apprenez vos <span>cours grace a l'IA</span></h1>
-                <p className="text-section">Apprenez vos cours grace a l'IA</p>
+                <p className="text-section">Apprenez vos cours grâce a l'IA</p>
                 <div className="w-full">
                   <button className="button section">En savoir plus</button>
                 </div>
@@ -92,9 +93,17 @@ export default function Home() {
               <div class="col-section-b  md:w-1/2 px-4">
                 <div className="screenshot screenshot-a"></div>
                 <div className="screenshot screenshot-b">
-                  <div className="section-navbar">
+                  <div className="screenshot-navbar">
                     <Image className="userprofile" src={UserProfile} alt="Profil utilisateur"/>
                     <input className="section-input" />
+                    <div className="tab-1">Apprentissage</div>
+                    <div className="tab-2">Evaluation</div>
+                    <div className="tab-3">Objectif</div>
+                  </div>
+                  <div className="screenshot-section">
+                    <div className="carte">
+                      <Image className="img-carte" src={Cours} alt="cours edy ia"/>
+                    </div>
                   </div>
                 </div>
               </div>
