@@ -102,7 +102,7 @@ export default function Home() {
                   </div>
                   <div className="screenshot-section">
                     <div className="carte">
-                      <Image className="img-carte" src={Cours} alt="cours edy ia"/>
+                      <h1>Neuroanatomie </h1>
                     </div>
                   </div>
                 </div>
