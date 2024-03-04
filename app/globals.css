@@ -261,6 +261,7 @@ body{
 }
 .col-section-b{
   width: 100%;
+  max-width: 100%;
   position: relative;
   display: flex;
   justify-content: flex-end;
@@ -429,12 +430,12 @@ body{
 /* -------------------------------------------MEDIAQUERRY--------------------------------------------- */
 /* --------------------------------------------------------------------------------------------------- */
 @media only screen and (max-width: 768px) {
-  /* body {position: relative;} */
-}
-@media only screen and (max-width: 621px) {
   .home-section{
     flex-wrap: wrap;
   }
+}
+@media only screen and (max-width: 621px) {
+
   .title-section{
     text-align: center;
   }
