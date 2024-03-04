@@ -5,6 +5,8 @@ import Login from "./components/login/login";
 import Register from "./components/register/register";
 import ProgressBar from "./components/progressbar/progress";
 import { useState, useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 // ---------IMAGE
 import Close from '../public/assets/images/icon-effacer-100.png';
 import UserProfile from '../public/assets/images/profile.png';
@@ -19,10 +21,12 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true); 
   const [formAnimation, setFormAnimation] = useState('');
 
+  useEffect(() => {AOS.init();}, []);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -56,7 +60,7 @@ export default function Home() {
               <button className="hero-button" onClick={() => toggleLoginForm(!showLoginForm)}>
                 {buttonText}
               </button>
-              <div className="hero-content">
+              <div  className="hero-content">
                 <h1 className='title-hero'>Edy<span className="span-title-hero">IA</span></h1>
                 <p className='text-hero'>Lorem ipsum dolor sit amet. Eum dolore vitae est voluptas sunt et cupiditate optio.</p>
               </div>
@@ -85,13 +89,13 @@ export default function Home() {
             </div>
 
             <div class="home-section container">
-              <div class="col-section-a">
+              <div data-aos="fade-right" data-aos-duration="1500" class="col-section-a">
                 <h1 className="title-section">Apprenez vos <span>cours grace a l'IA</span></h1>
                 <p className="text-section">Apprenez vos cours grâce a l'IA</p>
                 <button className="button section">En savoir plus</button>
               </div>
               <div class="col-section-b">
-                <div className="screenshot screenshot-a">
+                <div data-aos="fade-up" data-aos-duration="1500" className="screenshot screenshot-a">
                 <div className="screenshot-navbar">
                     <Image className="userprofile" src={UserProfile} alt="Profil utilisateur"/>
                     <input className="section-input" />
@@ -105,7 +109,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="screenshot screenshot-b">
+                <div data-aos="zoom-in" data-aos-duration="1500" className="screenshot screenshot-b">
                   <div className="screenshot-navbar">
                     <Image className="userprofile" src={UserProfile} alt="Profil utilisateur"/>
                     <input className="section-input" />
