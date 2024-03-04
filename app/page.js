@@ -89,13 +89,13 @@ export default function Home() {
             </div>
 
             <div class="home-section container">
-              <div data-aos="fade-right" data-aos-duration="1500" class="col-section-a">
+              <div data-aos="fade-right" data-aos-duration="1000" class="col-section-a">
                 <h1 className="title-section">Apprenez vos <span>cours grace a l'IA</span></h1>
                 <p className="text-section">Apprenez vos cours grâce a l'IA</p>
                 <button className="button section">En savoir plus</button>
               </div>
               <div class="col-section-b">
-                <div data-aos="fade-up" data-aos-duration="1500" className="screenshot screenshot-a">
+                <div  className="screenshot screenshot-a" data-aos-duration="700" data-aos="fade-up" >
                 <div className="screenshot-navbar">
                     <Image className="userprofile" src={UserProfile} alt="Profil utilisateur"/>
                     <input className="section-input" />
@@ -109,9 +109,9 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div data-aos="zoom-in" data-aos-duration="1500" className="screenshot screenshot-b">
+                <div data-aos="fade-up"  className="screenshot screenshot-b">
                   <div className="screenshot-navbar">
-                    <Image className="userprofile" src={UserProfile} alt="Profil utilisateur"/>
+                    <Image data-aos="zoom-out"  data-aos-duration="1500" className="userprofile" src={UserProfile} alt="Profil utilisateur"/>
                     <input className="section-input" />
                     <div className="tab-1">Apprentissage</div>
                     <div className="tab-2">Evaluation</div>
@@ -119,10 +119,10 @@ export default function Home() {
                   </div>
                   <div className="screenshot-section">
 
-                    <div className="carte">
+                    <div className="carte" data-aos="zoom-in"  data-aos-duration="1500" >
                       <div className="flex">
                         <div className=""><h1>Neuroanatomie</h1></div>
-                        <div className="progress-group "><div className="circle-green"><Image src={Up} className="flche" alt="en haut"/></div><p className="text-module">25%</p></div>
+                        <div className="progress-group "><div  className="circle-green"><Image  src={Up} className="flche" alt="en haut"/></div><p className="text-module">25%</p></div>
                       </div>
                       <div className="grid grid-cols-2">
                         <div className="my-1"><ProgressBar/></div>
