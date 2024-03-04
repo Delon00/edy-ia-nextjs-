@@ -3,10 +3,12 @@
 import Image from "next/image";
 import Login from "./components/login/login";
 import Register from "./components/register/register";
+import ProgressBar from "./components/progressbar/progress";
 import { useState, useEffect } from "react";
+// ---------IMAGE
 import Close from '../public/assets/images/icon-effacer-100.png';
 import UserProfile from '../public/assets/images/profile.png';
-import Cours from '../public/assets/images/cours.png';
+import Clock from '../public/assets/images/temps.png';
 import Up from '../public/assets/images/up.png';
 
 export default function Home() {
@@ -83,15 +85,12 @@ export default function Home() {
             </div>
 
             <div class="home-section container">
-              <div class="col-section-a md:w-1/2">
+              <div class="col-section-a">
                 <h1 className="title-section">Apprenez vos <span>cours grace a l'IA</span></h1>
                 <p className="text-section">Apprenez vos cours grâce a l'IA</p>
-                <div className="w-full">
-                  <button className="button section">En savoir plus</button>
-                </div>
-                
+                <button className="button section">En savoir plus</button>
               </div>
-              <div class="col-section-b  md:w-1/2 px-4">
+              <div class="col-section-b">
                 <div className="screenshot screenshot-a">
                 <div className="screenshot-navbar">
                     <Image className="userprofile" src={UserProfile} alt="Profil utilisateur"/>
@@ -118,14 +117,15 @@ export default function Home() {
 
                     <div className="carte">
                       <div className="flex">
-                        <div className="md:w-1/2"><h1>Neuroanatomie</h1></div>
-                        <div className="progress-group md:w-1/2"><div className="circle-green"><Image src={Up} className="flche" alt="en haut"/></div><p className="text-module">25%</p></div>
+                        <div className=""><h1>Neuroanatomie</h1></div>
+                        <div className="progress-group "><div className="circle-green"><Image src={Up} className="flche" alt="en haut"/></div><p className="text-module">25%</p></div>
                       </div>
                       <div className="grid grid-cols-2">
-                        <div>
-                          <div className="circle-progress"> </div>
+                        <div className="my-1"><ProgressBar/></div>
+                        <div className="div-remaining-time">
+                          <div className="flex"><Image className="clock" src={Clock} alt="clock"/><p className="hours-remaining-time" >4h25</p></div>
+                          <p className="text-remaining-time">début de la révision</p>
                         </div>
-                        <div></div>
                       </div>
                     </div>
 

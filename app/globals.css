@@ -1,4 +1,15 @@
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
 body{
   margin: 0;
 }
@@ -57,6 +68,7 @@ body{
   height: 100%;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   flex-direction: column;
   margin-left:3%;
 }
@@ -250,12 +262,13 @@ body{
   width: 100%;
   max-width: 100%;
   display: flex;
+  overflow: hidden;
 }
 .col-section-a{
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 2%;
 }
@@ -284,7 +297,7 @@ body{
   text-align: left;
   width: 100%;
   font-size: 20px;
-  margin-top: 10px;
+
   margin-bottom: 10px;
   color: rgb(171, 170, 170);
   font-size: 19px;
@@ -322,7 +335,7 @@ body{
   width: 80%;
   opacity: 0.8;
   margin-top: 2%;
-  height: 82%;
+  height: 85%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .screenshot-a .screenshot-navbar{
@@ -339,6 +352,8 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .userprofile{
   width:40px;
@@ -392,6 +407,8 @@ body{
 .carte h1{
   font-size: 15px;
   color: #ffffff;
+  margin: 0;
+
 }
 .circle-green{
   background-color: rgb(92, 239, 92);
@@ -418,10 +435,33 @@ body{
   justify-content: flex-end;
   width: 100%;
 }
-.circle-progress{
+.radial-progress::after{
+  background-color: #FFC244;
 
 }
-
+.radial-progress::before{
+  background-color: #f9e4b9;
+}
+.div-remaining-time{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+.text-remaining-time{
+  color: #fff;
+  font-size: 8px;
+  text-align: end;
+}
+.hours-remaining-time{
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+}
+.clock{
+  width: 15px;
+  height: 15px;
+}
 
 
 
@@ -433,6 +473,19 @@ body{
   .home-section{
     flex-wrap: wrap;
   }
+  .screenshot-a{
+    width: 70%;
+    height: 87%;
+  }
+  .screenshot-b{
+    width: 90%;
+    height: 70%;
+  }
+  .col-section-a{
+    align-items: center;
+  }
+
+
 }
 @media only screen and (max-width: 621px) {
 
@@ -453,20 +506,13 @@ body{
     padding-top: 0;
     padding-bottom: 0;
   }
-  .screenshot-a{
-    width: 60%;
-    height: 85%;
-  }
-  .screenshot-b{
-    width: 80%;
-    height: 70%;
-  }
+
 }
 @media only screen and (max-width: 500px) {
   .google-btn p,.apple-btn p,.facebook-btn p{font-size: 13px;}
   .hero-content {justify-content: center;margin: 0;transform: scale(0.8);}
   .hero-button {margin-top: 0%;margin-right: 0%;bottom: 15%;left: 50%;transform: translateX(-50%);}
-  .title-hero{color: #ffffff;font-size: 130px;}
+  .title-hero{color: #ffffff;font-size: 120px;}
   .login-form {margin-top: 0px;margin-right: 0%;bottom: 22%;width: 90%;left: 50%;transform: translateX(-50%);}
   .slide-from-top {animation: slideFromTop 0.5s ease;}
   @keyframes slideFromTop {
