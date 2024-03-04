@@ -484,6 +484,9 @@ body{
   .col-section-a{
     align-items: center;
   }
+  .screenshot{
+    align-items: flex-start;
+  }
 
 
 }
@@ -506,6 +509,9 @@ body{
     padding-top: 0;
     padding-bottom: 0;
   }
+  .carte{
+    width: 65%;
+  }
 
 }
 @media only screen and (max-width: 500px) {
@@ -516,41 +522,40 @@ body{
   .login-form {margin-top: 0px;margin-right: 0%;bottom: 22%;width: 90%;left: 50%;transform: translateX(-50%);}
   .slide-from-top {animation: slideFromTop 0.5s ease;}
   @keyframes slideFromTop {
-    from {
-      
-      transform: translateX(50%);
-      opacity: 0;
-    }
-    to {
-      
-      transform: translateX(-50%);
-      opacity: 1;
-    }
+    from {transform: translateX(50%);opacity: 0;}
+    to {transform: translateX(-50%);opacity: 1;}
   }
-
-  .slide-out {
-    animation: slide-out 0.5s ease;
-  }
-  
+  .slide-out {animation: slide-out 0.5s ease;}
   @keyframes slide-out {
-    from {
-      transform: translateX(-50%);
-      opacity: 1;
-    }
-    to {
-      transform: translateX(50%);
-      opacity: 0;
-    }
+    from {transform: translateX(-50%);opacity: 1;}
+    to {transform: translateX(50%);opacity: 0;}
   }
-
   .link-button{
     font-size: 14px;
   }
   
 }
-@media only screen and(max-width:450px) {
-  .carte {
-    width: 65%;
+@media only screen and(max-width: 450px) {
+
+}
+@media only screen and (max-width: 390px) {
+  .title-section{
+    font-size: 50px;
   }
 }
+@media only screen and (max-width: 290px) {
+  .title-hero{
+    font-size: 90px;
+  }
+  .hero-button{
+    width: 70%;
+  }
+  .title-section{
+    font-size: 35px;
+  }
+}
+
+
+
+
 .row{display: flex; width: 100%;}.col{display: block;}
