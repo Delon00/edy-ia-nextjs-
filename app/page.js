@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import Close from '../public/assets/images/icon-effacer-100.png';
 import UserProfile from '../public/assets/images/profile.png';
 import Cours from '../public/assets/images/cours.png';
+import Up from '../public/assets/images/up.png';
 
 export default function Home() {
   const [showLoginForm, setShowLoginForm] = useState(false);
@@ -91,7 +92,20 @@ export default function Home() {
                 
               </div>
               <div class="col-section-b  md:w-1/2 px-4">
-                <div className="screenshot screenshot-a"></div>
+                <div className="screenshot screenshot-a">
+                <div className="screenshot-navbar">
+                    <Image className="userprofile" src={UserProfile} alt="Profil utilisateur"/>
+                    <input className="section-input" />
+                    <div className="tab-1">Apprentissage</div>
+                    <div className="tab-2">Evaluation</div>
+                    <div className="tab-3">Objectif</div>
+                  </div>
+                  <div className="screenshot-section">
+                    <div className="carte">
+                      
+                    </div>
+                  </div>
+                </div>
                 <div className="screenshot screenshot-b">
                   <div className="screenshot-navbar">
                     <Image className="userprofile" src={UserProfile} alt="Profil utilisateur"/>
@@ -101,9 +115,20 @@ export default function Home() {
                     <div className="tab-3">Objectif</div>
                   </div>
                   <div className="screenshot-section">
+
                     <div className="carte">
-                      <h1>Neuroanatomie </h1>
+                      <div className="flex">
+                        <div className="md:w-1/2"><h1>Neuroanatomie</h1></div>
+                        <div className="progress-group md:w-1/2"><div className="circle-green"><Image src={Up} className="flche" alt="en haut"/></div><p className="text-module">25%</p></div>
+                      </div>
+                      <div className="grid grid-cols-2">
+                        <div>
+                          <div className="circle-progress"> </div>
+                        </div>
+                        <div></div>
+                      </div>
                     </div>
+
                   </div>
                 </div>
               </div>
