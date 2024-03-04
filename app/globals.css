@@ -548,4 +548,9 @@ body{
   }
   
 }
+@media only screen and(max-width:450px) {
+  .carte {
+    width: 65%;
+  }
+}
 .row{display: flex; width: 100%;}.col{display: block;}

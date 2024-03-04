@@ -124,7 +124,7 @@ export default function Home() {
                         <div className="my-1"><ProgressBar/></div>
                         <div className="div-remaining-time">
                           <div className="flex"><Image className="clock" src={Clock} alt="clock"/><p className="hours-remaining-time" >4h25</p></div>
-                          <p className="text-remaining-time">début de la révision</p>
+                          <p className="text-remaining-time">restant avant la révision</p>
                         </div>
                       </div>
                     </div>
