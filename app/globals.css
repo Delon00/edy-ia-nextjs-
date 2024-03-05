@@ -259,13 +259,28 @@ body{
   }
 }
 .home-section{
-  background: rgb(0,0,0);
-  background: linear-gradient(59deg, rgba(0,0,0,1) 52%, rgba(35,34,2,1) 100%);
+  position: relative;
+  background-image:url('../public/assets/images/background-section.png');
   height: 100vh;
   width: 100%;
   max-width: 100%;
   display: flex;
   overflow: hidden;
+}
+.home-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+/* From https://css.glass */
+background: rgba(0, 0, 0, 0.80);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+  
 }
 .col-section-a{
   width: 100%;
@@ -353,7 +368,7 @@ body{
 .screenshot-navbar{
   padding: 1.2rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -465,7 +480,14 @@ body{
   width: 15px;
   height: 15px;
 }
-
+.holo-blur{
+  position: absolute;
+  border-radius: 100%;
+  height: 300px;
+  width: 600px;
+  background-color: #FFC244;
+  opacity: 0.4;
+}
 
 
 
