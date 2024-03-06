@@ -122,7 +122,7 @@ export default function Home() {
                     <div className="carte" data-aos="zoom-in"  data-aos-duration="1500" >
                       <div className="flex">
                         <div className=""><h1>Neuroanatomie</h1></div>
-                        <div className="progress-group "><div  className="circle-green"><Image  src={Up} className="flche" alt="en haut"/></div><p className="text-module">25%</p></div>
+                        <div className="progress-group "><div  className="circle-green"><Image  src={Up} className="flche" alt="en haut"/></div><p className="text-module">17%</p></div>
                       </div>
                       <div className="grid grid-cols-2">
                         <div className="my-1"><ProgressBar/></div>
