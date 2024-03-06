@@ -9,7 +9,6 @@ import Facebook from "@/public/assets/images/icon-facebook-100.png";
 
 
 export default  function Register({ showRegistrationForm, toggleLoginForm }) {
-
     return (
         showRegistrationForm && (
             <div className="login-form">
