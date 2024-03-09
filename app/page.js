@@ -89,7 +89,7 @@ export default function Home() {
             </div>
 
             <div class="home-section container">
-              <div data-aos="fade-right" data-aos-duration="1000" class="col-section-a">
+              <div data-aos="fade-right" data-aos-duration="1200" class="col-section-a">
                 <h1 className="title-section">Apprenez vos <span>cours grace a l'IA</span></h1>
                 <p className="text-section">Apprenez vos cours grâce a l'IA</p>
                 <button className="button section">En savoir plus</button>
