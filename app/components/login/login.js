@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Google from '../../../public/assets/images/icon-google-100.png';
 import Apple from '../../../public/assets/images/icon-mac-100.png';
 import Facebook from '../../../public/assets/images/icon-facebook-100.png';
+import LoginBtn from './login-btn';
 
 export default function Login({ showLoginForm, showRegistrationForm, showForgetPasswordForm, formAnimation, toggleShowForgetPasswordForm, toggleRegistrationForm }) {
     return (
@@ -14,7 +15,7 @@ export default function Login({ showLoginForm, showRegistrationForm, showForgetP
                     <input type="text" id="email" name="email" placeholder="Email ou id" />
                     <label htmlFor="password">Mot de passe</label>
                     <input type="password" id="password" name="password" placeholder="Mot de passe" />
-                    <button className='login-btn' type="submit">Se connecter</button>
+                    <LoginBtn/>
                     <div className='lien-formulaire'>
                         <button className='link-button' onClick={toggleShowForgetPasswordForm}>Mot de passe oublié</button>
                         <button className='link-button' onClick={toggleRegistrationForm}>Pas encore inscrit</button>
