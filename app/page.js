@@ -49,12 +49,8 @@ export default function Home() {
 
   return (
       <main>
-        {isLoading ? ( 
-          <div className="loader-container">
-            <h1 className='title-loader'>Edy<span className="span-title-loader">IA</span></h1>
-            <div className='loader'></div>
-          </div>
-        ) : (
+        {isLoading ? ( <div className="loader-container"><h1 className='title-loader'>Edy<span className="span-title-loader">IA</span></h1><div className='loader'></div></div>)
+          :(
           <>
             <div className="hero-container">
               <button className="hero-button" onClick={() => toggleLoginForm(!showLoginForm)}>

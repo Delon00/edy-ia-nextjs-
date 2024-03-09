@@ -6,6 +6,8 @@ import Facebook from '@/public/assets/images/icon-facebook-100.png';
 import { zodResolver } from '@hookform/resolvers/zod'; 
 import { useForm } from 'react-hook-form';
 import { LoginSchema } from '@/schemas';
+import { LoginAction } from "@/action/loginaction";
+
 
 
 
@@ -18,9 +20,12 @@ export default function Login({ showLoginForm, showRegistrationForm, showForgetP
         }
     });
 
-    const onSubmit = (data) => {
-        console.log(data);
+    const onSubmit = (values) => {
+        LoginAction(values);
+        console.log(values)
     };
+    
+
     return (
         showLoginForm && !showRegistrationForm && !showForgetPasswordForm && (
             <div className={`login-form ${formAnimation}`}>
