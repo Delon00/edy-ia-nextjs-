@@ -43,7 +43,7 @@ model User {
   nom               String?
   prenom            String?
   numero            String?
-  email             String
+  email             String   @unique
   avatar            String    @default("users/default.png")
   email_verified_at DateTime?
   password          String?
