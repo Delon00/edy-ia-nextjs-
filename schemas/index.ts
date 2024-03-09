@@ -1,7 +1,7 @@
-import { z } from 'zod';
+import * as z from 'zod';
 
-export const userSchema = z.object({
+export const LoginSchema = z.object({
     username: z.string().min(3),
     email: z.string().email(),
-    age: z.number().positive()
+    password:z.string()
 });
