@@ -9,20 +9,16 @@ import { LoginSchema } from '@/schemas';
 import { LoginAction } from "@/action/loginaction";
 
 
-
-
 export default function Login({ showLoginForm, showRegistrationForm, showForgetPasswordForm, formAnimation,toggleShowForgetPasswordForm, toggleRegistrationForm}) {
+
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(LoginSchema),
-        defaultValues: {
-            email: "",
-            password: "",
-        }
+        defaultValues: {email: "",password: "",}
     });
 
     const onSubmit = (values) => {
         LoginAction(values);
-        console.log(values)
+
     };
     
 
@@ -32,10 +28,10 @@ export default function Login({ showLoginForm, showRegistrationForm, showForgetP
                 <form className='connexion' onSubmit={handleSubmit(onSubmit)}>
                     <h1>Connexion</h1>
                     <label htmlFor="email">Email ou identifiant</label>
-                    <input type="email" id="email" {...register("email")} placeholder="Email ou id" />
+                    <input type="email" id="email" name="email" {...register("email")} placeholder="Email ou id" />
                     {errors.email && <span style={{ color: 'red' }}>{errors.email.message}</span>}   
                     <label htmlFor="password">Mot de passe</label>
-                    <input type="password" id="password" {...register("password")} placeholder="******" />
+                    <input type="password" id="password" name="password" {...register("password")} placeholder="******" />
                     {errors.password && <span style={{ color: 'red' }}>{errors.password.message}</span>}
                     <button className='login-btn' type="submit">Se connecter</button>
                     <div className='lien-formulaire'>
