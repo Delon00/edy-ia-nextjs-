@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import  signIn  from 'next-auth/react';
-import "./register.css";
+import "./auth.css";
 import Image from "next/image";
 import Google from "@/public/assets/images/icon-google-100.png";
 import Apple from "@/public/assets/images/icon-mac-100.png";

@@ -1,6 +1,6 @@
 import './progress.css'
 import Image from 'next/image';
-import Brain from'../../../public/assets/images/brain.png'
+import Brain from'@/public/assets/images/brain.png'
 
 export default function ProgressBar(){
 return (

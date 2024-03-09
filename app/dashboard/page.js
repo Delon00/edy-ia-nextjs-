@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client';
 import Image from "next/image";
-import Login from "../components/login/login";
-import Register from "../components/register/register";
+import Login from "../components/auth/login";
+import Register from "../components/auth/register";
 import ProgressBar from "../components/progressbar/progress";
 import { useState, useEffect } from "react";
 import AOS from 'aos';

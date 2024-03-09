@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client';
 import Image from "next/image";
-import Login from "./components/login/login";
-import Register from "./components/register/register";
-import ProgressBar from "./components/progressbar/progress";
+import Login from "@/components/auth/login";
+import Register from "@/components/auth/register";
+import ProgressBar from "@/components/progressbar/progress";
 import { useState, useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -88,8 +88,8 @@ export default function Home() {
               )}
             </div>
 
-            <div class="home-section container">
-              <div data-aos="fade-right" data-aos-duration="1200" class="col-section-a">
+            <div class="home-section">
+              <div class="col-section-a" data-aos="fade-right" data-aos-duration="1200" >
                 <h1 className="title-section">Apprenez vos <span>cours grace a l'IA</span></h1>
                 <p className="text-section">Apprenez vos cours grâce a l'IA</p>
                 <button className="button section">En savoir plus</button>
