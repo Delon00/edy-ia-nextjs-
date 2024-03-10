@@ -8,10 +8,10 @@ import { useState, useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 // ---------IMAGE
-import Close from '../public/assets/images/icon-effacer-100.png';
-import UserProfile from '../public/assets/images/profile.png';
-import Clock from '../public/assets/images/temps.png';
-import Up from '../public/assets/images/up.png';
+import Close from '@/public/assets/images/icon-effacer-100.png';
+import UserProfile from '@/public/assets/images/profile.png';
+import Clock from '@/public/assets/images/temps.png';
+import Up from '@/public/assets/images/up.png';
 
 export default function Home() {
   const [showLoginForm, setShowLoginForm] = useState(false);
