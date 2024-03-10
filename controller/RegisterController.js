@@ -1,7 +1,7 @@
 'use server'
 import { RegisterSchema } from "@/schemas";
 import  prisma  from "@/lib/prisma";
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import { getUserByEmail } from "@/data/user";
 
 export const RegisterAction = async (values) => {

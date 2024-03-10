@@ -19,8 +19,16 @@ export default function Login({ showLoginForm, showRegistrationForm, showForgetP
     });
 
     const onSubmit = async (values) => {
-        try {LoginAction(values);}
-        catch (error) {console.error('Erreur lors de la soumission du formulaire :', error);}
+        try {
+            const result = await LoginAction(values);
+            if (result.error) {
+                setErrorMessage(result.error);
+            } else {
+                // Afficher un message de succès si nécessaire
+            }
+        } catch (error) {
+            console.error('Erreur lors de la soumission du formulaire :', error);
+        }
     };
     
 

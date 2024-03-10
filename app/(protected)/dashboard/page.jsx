@@ -5,6 +5,7 @@ import Login from "@/components/auth/login";
 import Register from "@/components/auth/register";
 import ProgressBar from "@/components/progressbar/progress";
 import { useState, useEffect } from "react";
+import {auth} from "@/auth"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 // ---------IMAGE
@@ -14,6 +15,9 @@ import Clock from '@/public/assets/images/temps.png';
 import Up from '@/public/assets/images/up.png';
 
 export default function dashboard(){
+  const DashboardPage = async()=>{
+    const session = await auth();
+  }
     return(
       <div  className="screenshot screenshot-b">
         <div className="screenshot-navbar">
