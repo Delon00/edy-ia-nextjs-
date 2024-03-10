@@ -8,7 +8,8 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod'; 
 import { useForm } from 'react-hook-form';
 import { LoginSchema } from '@/schemas';
-import { LoginAction } from '@/action/loginaction';
+import { LoginAction } from '@/controller/loginController';
+
 
 export default function Login({ showLoginForm, showRegistrationForm, showForgetPasswordForm, formAnimation, toggleShowForgetPasswordForm, toggleRegistrationForm }) {
 
@@ -42,7 +43,6 @@ export default function Login({ showLoginForm, showRegistrationForm, showForgetP
                     <button className='google-btn' type="button"><Image className='img-logo' src={Google} alt="google" /><p>continuer avec Google </p></button>
                     <button className='apple-btn' type="button"><Image className='img-logo' src={Apple} alt="apple" /><p>continuer avec Apple </p></button>
                     <button className='facebook-btn' type="button"><Image className='img-logo' src={Facebook} alt="facebook" /><p>continuer avec Facebook </p></button>
-
                 </form>
             </div>
         )
