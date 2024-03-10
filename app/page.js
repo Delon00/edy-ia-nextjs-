@@ -114,7 +114,6 @@ export default function Home() {
                     <div className="tab-3">Objectif</div>
                   </div>
                   <div className="screenshot-section">
-
                     <div className="carte" data-aos="zoom-in"  data-aos-duration="1500" >
                       <div className="flex">
                         <div className=""><h1>Neuroanatomie</h1></div>

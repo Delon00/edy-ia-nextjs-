@@ -1,24 +1,25 @@
+import React, { useState } from 'react';
 import Image from "next/image";
 import styles from './auth.css';
 import Google from '@/public/assets/images/icon-google-100.png';
 import Apple from '@/public/assets/images/icon-mac-100.png';
 import Facebook from '@/public/assets/images/icon-facebook-100.png';
+import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod'; 
 import { useForm } from 'react-hook-form';
 import { LoginSchema } from '@/schemas';
-import { LoginAction } from "@/action/loginaction";
+import { LoginAction } from '@/action/loginaction';
 
-
-export default function Login({ showLoginForm, showRegistrationForm, showForgetPasswordForm, formAnimation,toggleShowForgetPasswordForm, toggleRegistrationForm}) {
+export default function Login({ showLoginForm, showRegistrationForm, showForgetPasswordForm, formAnimation, toggleShowForgetPasswordForm, toggleRegistrationForm }) {
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(LoginSchema),
         defaultValues: {email: "",password: "",}
     });
 
-    const onSubmit = (values) => {
-        LoginAction(values);
-
+    const onSubmit = async (values) => {
+        try {LoginAction(values);}
+        catch (error) {console.error('Erreur lors de la soumission du formulaire :', error);}
     };
     
 
@@ -27,8 +28,8 @@ export default function Login({ showLoginForm, showRegistrationForm, showForgetP
             <div className={`login-form ${formAnimation}`}>
                 <form className='connexion' onSubmit={handleSubmit(onSubmit)}>
                     <h1>Connexion</h1>
-                    <label htmlFor="email">Email ou identifiant</label>
-                    <input type="email" id="email" name="email" {...register("email")} placeholder="Email ou id" />
+                    <label htmlFor="email">Email</label>
+                    <input type="email" id="email" name="email" {...register("email")} placeholder="example@edyia.fr" />
                     {errors.email && <span style={{ color: 'red' }}>{errors.email.message}</span>}   
                     <label htmlFor="password">Mot de passe</label>
                     <input type="password" id="password" name="password" {...register("password")} placeholder="******" />
@@ -41,6 +42,7 @@ export default function Login({ showLoginForm, showRegistrationForm, showForgetP
                     <button className='google-btn' type="button"><Image className='img-logo' src={Google} alt="google" /><p>continuer avec Google </p></button>
                     <button className='apple-btn' type="button"><Image className='img-logo' src={Apple} alt="apple" /><p>continuer avec Apple </p></button>
                     <button className='facebook-btn' type="button"><Image className='img-logo' src={Facebook} alt="facebook" /><p>continuer avec Facebook </p></button>
+
                 </form>
             </div>
         )

@@ -1,5 +1,5 @@
 'use server'
 
 export const LoginAction = (values) => {
-    console.log(values);
+    console.log("Données du formulaire :",values);
 };
