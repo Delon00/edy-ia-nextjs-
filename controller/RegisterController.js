@@ -2,6 +2,7 @@
 import { RegisterSchema } from "@/schemas";
 import  prisma  from "@/lib/prisma";
 import bcrypt from 'bcrypt';
+import { getUserByEmail } from "@/data/user";
 
 export const RegisterAction = async (values) => {
     console.log("Données du formulaire :", values);
@@ -13,10 +14,10 @@ export const RegisterAction = async (values) => {
 
     const { email, password } = validationResult.data;
     const hashedPassword = await bcrypt.hash(password, 10);
-    const existingUser = await prisma.User.findUnique({ where: { email } });
+    const existingUser = await getUserByEmail(email);
     
     if (existingUser) {
-        return { error: "Cette adresse est déjà inscrite" };
+        return { error: "Adresse e-mail déjà utilisée" };
     }
 
     await prisma.user.create({

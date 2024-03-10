@@ -8,7 +8,7 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod'; 
 import { useForm } from 'react-hook-form';
 import { LoginSchema } from '@/schemas';
-import { LoginAction } from '@/controller/loginController';
+import { LoginAction } from '@/controller/LoginController';
 
 
 export default function Login({ showLoginForm, showRegistrationForm, showForgetPasswordForm, formAnimation, toggleShowForgetPasswordForm, toggleRegistrationForm }) {
