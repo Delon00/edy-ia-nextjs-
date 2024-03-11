@@ -1,11 +1,9 @@
 import NextAuth from "next-auth"
 import authConfig from "@/auth.config"
-export const { auth: middleware } = NextAuth(authConfig)
 import {DEFAULT_LOGIN_REDIRECT,publicRoutes,authRoutes,apiAuthPrefix} from "@/routes"
-
 const {auth} = NextAuth(authConfig)
 
-export default auth((req) => {
+export default auth((req)=>{
     const {nextUrl} = req;
     const isLoggedIn = !!req.auth;
 
@@ -13,22 +11,22 @@ export default auth((req) => {
     const isPublicRoute = publicRoutes.includes(nextUrl.pathname);
     const isAuthRoute = authRoutes.includes(nextUrl.pathname);
 
-    if(isApiAuthRoute){
-        return
-    }
-    if(isAuthRoute){
-        if(isLoggedIn){
+    if(isApiAuthRoute){return}
+
+    if(isAuthRoute)
+    {
+        if(isLoggedIn)
+        {
             return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl))
         }
         return
     }
-    if(!isLoggedIn && !isPublicRoute){
+    if(!isLoggedIn && !isPublicRoute)
+    {
         return Response.redirect(new URL("/", nextUrl))
     }
     return
-})
-
-
+});
 export const config = {
     matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
 }
