@@ -1,5 +1,4 @@
 'use server'
-import * as z from "zod";
 import { LoginSchema } from "@/schemas";
 import { signIn } from "@/auth";
 import { AuthError } from "next-auth";
@@ -11,17 +10,19 @@ export const LoginAction = async (values) => {
     const validationResult = LoginSchema.safeParse(values);
 
     if (!validationResult.success) {return { error: "Champs invalides", details: validationResult.error };}
-
     const { email, password } = validationResult.data;
-    try {
+    try{
         await signIn("credentials", {
             email,
             password,
             redirectTo: DEFAULT_LOGIN_REDIRECT,
         });
-    }catch (error) {
+    }
+    catch (error)
+    {
         if (error instanceof AuthError) {
-            switch (error.type) {
+            switch (error.type) 
+            {
                 case "CredentialsSignin":
                     return { error: "email ou mot de passe invalide" };
                 default:
@@ -30,5 +31,4 @@ export const LoginAction = async (values) => {
         }
         throw error;
     }
-
 };

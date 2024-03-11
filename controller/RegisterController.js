@@ -3,6 +3,8 @@ import { RegisterSchema } from "@/schemas";
 import  prisma  from "@/lib/prisma";
 import bcrypt from 'bcryptjs';
 import { getUserByEmail } from "@/data/user";
+import { signIn } from "@/auth";
+import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
 
 export const RegisterAction = async (values) => {
     console.log("Données du formulaire :", values);
@@ -26,7 +28,11 @@ export const RegisterAction = async (values) => {
             password: hashedPassword,
         },
     });
+    await signIn('credentials', {
+        email: values.email,
+        password: values.password
+    });
 
-    return { success: "Compte créé" };
+    return {  redirectTo: DEFAULT_LOGIN_REDIRECT};
 };
 
