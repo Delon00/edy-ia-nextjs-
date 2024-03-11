@@ -11,8 +11,9 @@ export const publicRoutes = [
  * @type {string[]}
  */
 export const authRoutes = [
-    "/auth/login",
-    "/auth/register"
+    // "/auth/login",
+    // "/auth/register"
+    "/"
 ];
 
 /**

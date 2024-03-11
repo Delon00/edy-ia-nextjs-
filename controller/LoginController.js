@@ -17,13 +17,13 @@ export const LoginAction = async (values) => {
         await signIn("credentials", {
             email,
             password,
-            redirectTo: DEFAULT_LOGIN_REDIRECT
+            redirectTo: DEFAULT_LOGIN_REDIRECT,
         });
-    } catch (error) {
+    }catch (error) {
         if (error instanceof AuthError) {
             switch (error.type) {
                 case "CredentialsSignin":
-                    return { error: "Credential invalide" };
+                    return { error: "email ou mot de passe invalide" };
                 default:
                     return { error: "Une erreur est survenue" };
             }

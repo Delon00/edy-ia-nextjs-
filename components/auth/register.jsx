@@ -19,13 +19,14 @@ export default function Register({ showRegistrationForm, toggleLoginForm }) {
         defaultValues: { email: '', password: '' }
     });
     const [errorMessage, setErrorMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
     const onSubmitRegister = async (values) => {
         try {
             const result = await RegisterAction(values);
             if (result.error) {
                 setErrorMessage(result.error);
             } else {
-                // Afficher un message de succès si nécessaire
+                setSuccessMessage(result.success);
             }
         } catch (error) {
             console.error('Erreur lors de la soumission du formulaire :', error);
