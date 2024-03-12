@@ -2,7 +2,7 @@
 'use client';
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { auth, signOut } from "@/auth.config";
+// import { auth, signOut } from "@/auth";
 import ProgressBar from "@/components/progressbar/progress";
 import AOS from 'aos';
 import'./styles.css'
@@ -14,15 +14,9 @@ import Clock from '@/public/assets/images/temps.png';
 import Up from '@/public/assets/images/up.png';
 
 export default function Dashboard() {
-  const [session, setSession] = useState(null);
-  useEffect(() => {
-    const fetchSession = async () => {
-      const sessionData = await auth();
-      setSession(sessionData);
-    };
-    fetchSession();
-  }, 
-  []);
+
+    
+
 
   return (
     <div className="dashboard">
@@ -39,13 +33,23 @@ export default function Dashboard() {
         <div className="w-full flex items-center justify-end">
           <button className="button">Commencer</button>
         </div>
-        
-        {session && JSON.stringify(session)}
+        <div className="dashboard-menu">
+          <div className="flex items-center">
+            <Image className="userprofile" src={UserProfile} alt="Profil utilisateur" />
+            <h4>Jean-Philippe Delon</h4>
+          </div>
+          <hr/>
+          <p>Paramètre</p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <button>Se déconnecte</button>
+        </div>
       </div>
-      <div className="screenshot-section">
-        <div className="carte">
+      <div className="dashboard-section-a">
+        <div className="course-card">
           <div className="flex">
-            <div className=""><h1>Neuroanatomie</h1></div>
+            <div className="title-course-card"><h1>Neuroanatomie</h1></div>
             <div className="progress-group "><div className="circle-green"><Image src={Up} className="flche" alt="en haut" /></div><p className="text-module">17%</p></div>
           </div>
           <div className="grid grid-cols-2">
