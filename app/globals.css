@@ -352,9 +352,12 @@ body{
   color: white;
   font-weight: 700;
   border: none;
-  border-radius: 15px;
+  border-radius: 20px;
   cursor: pointer;
+  transition: 0.2s ease-out;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+.button:hover{border:1px black solid;border-radius:35px; transition:   scale(1.03);transition: 0.2s ease-in;}
 .button.section{
   width: 150px;
   height: 40px;

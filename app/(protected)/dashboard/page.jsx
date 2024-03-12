@@ -26,13 +26,21 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard">
-      <div className="dashboard-navbar">
-        <Image className="userprofile" src={UserProfile} alt="Profil utilisateur" />
+      <div className="dashboard-navbar grid grid-cols-3 gap-4">
+        <div className="w-full flex items-center justify-start ">
+          <Image className="userprofile" src={UserProfile} alt="Profil utilisateur" />
+          <input className="section-input" />
+        </div>
+        <div className="w-full flex items-center justify-center ">
+          <div className="tab-1">Apprentissage</div>
+          <div className="tab-2">Evaluation</div>
+          <div className="tab-3">Objectif</div>
+        </div>
+        <div className="w-full flex items-center justify-end">
+          <button className="button">Commencer</button>
+        </div>
+        
         {session && JSON.stringify(session)}
-        <input className="section-input" />
-        <div className="tab-1">Apprentissage</div>
-        <div className="tab-2">Evaluation</div>
-        <div className="tab-3">Objectif</div>
       </div>
       <div className="screenshot-section">
         <div className="carte">
