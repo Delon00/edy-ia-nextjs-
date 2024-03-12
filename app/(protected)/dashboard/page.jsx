@@ -2,9 +2,10 @@
 'use client';
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { auth } from "@/auth";
+import { auth, signOut } from "@/auth.config";
 import ProgressBar from "@/components/progressbar/progress";
 import AOS from 'aos';
+import'./styles.css'
 import 'aos/dist/aos.css';
 // ---------IMAGE
 import Close from '@/public/assets/images/icon-effacer-100.png';
@@ -14,7 +15,6 @@ import Up from '@/public/assets/images/up.png';
 
 export default function Dashboard() {
   const [session, setSession] = useState(null);
-
   useEffect(() => {
     const fetchSession = async () => {
       const sessionData = await auth();
@@ -25,8 +25,8 @@ export default function Dashboard() {
   []);
 
   return (
-    <div className="screenshot screenshot-b">
-      <div className="screenshot-navbar">
+    <div className="dashboard">
+      <div className="dashboard-navbar">
         <Image className="userprofile" src={UserProfile} alt="Profil utilisateur" />
         {session && JSON.stringify(session)}
         <input className="section-input" />
