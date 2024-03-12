@@ -4,6 +4,9 @@ import Image from "next/image";
 import Login from "@/components/auth/login";
 import Register from "@/components/auth/register";
 import ProgressBar from "@/components/progressbar/progress";
+import CardFree from "@/components/pricing-card/card-free/card-free";
+import CardPremium from "@/components/pricing-card/card-premium/card-premium";
+import CardSchool from "@/components/pricing-card/card-school/card-school";
 import { useState, useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -120,8 +123,7 @@ export default function Home() {
                         <div className="progress-group "><div  className="circle-green"><Image  src={Up} className="flche" alt="en haut"/></div><p className="text-module">17%</p></div>
                       </div>
                       <div className="grid grid-cols-2">
-                        <div className="my-1"><ProgressBar/></div>
-                        <div className="div-remaining-time">
+                      <div className="div-remaining-time">
                           <div className="flex"><Image className="clock" src={Clock} alt="clock"/><p className="hours-remaining-time" >4h25</p></div>
                           <p className="text-remaining-time">restant avant la révision</p>
                         </div>
@@ -130,6 +132,18 @@ export default function Home() {
 
                   </div>
                 </div>
+              </div>
+            </div>
+
+            <div className="home-section2">
+              <div className="text-section2">
+                <h1>Nos prix</h1>
+                <p>Nos offrons plusieurs option pour votre confort de travail</p>
+              </div>
+              <div className="pricing">
+                <CardFree/>
+                <CardPremium/>
+                <CardSchool/>
               </div>
             </div>
 

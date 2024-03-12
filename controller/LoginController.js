@@ -12,7 +12,7 @@ export const LoginAction = async (values) => {
     if (!validationResult.success) {return { error: "Champs invalides", details: validationResult.error };}
     const { email, password } = validationResult.data;
     try{
-        await signIn("credentials", {
+        await signIn("credentials",{
             email,
             password,
             redirectTo: DEFAULT_LOGIN_REDIRECT,
