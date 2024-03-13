@@ -1,6 +1,6 @@
 'use server'
 import { RegisterSchema } from "@/schemas";
-import  prisma  from "@/lib/prisma";
+import  {prismadb}  from "@/lib/prismadb";
 import bcrypt from 'bcryptjs';
 import { getUserByEmail } from "@/data/user";
 import { signIn } from "@/auth";
@@ -22,7 +22,7 @@ export const RegisterAction = async (values) => {
         return { error: "Adresse e-mail déjà utilisée" };
     }
 
-    await prisma.user.create({
+    await prismadb.user.create({
         data: {
             email,
             password: hashedPassword,
@@ -32,7 +32,5 @@ export const RegisterAction = async (values) => {
         email: values.email,
         password: values.password
     });
-
-    return {  redirectTo: DEFAULT_LOGIN_REDIRECT};
 };
 

@@ -7,14 +7,6 @@ export const publicRoutes = [
 ];
 
 /**
- * Un tableau de route qui sont utilisées pour l'authentification
- * @type {string[]}
- */
-export const authRoutes = [
-    "/"
-];
-
-/**
  * La redirection par défaut après connexion
  * @type {string}
  */

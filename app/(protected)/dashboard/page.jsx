@@ -2,7 +2,7 @@
 'use client';
 import Image from "next/image";
 import { useState, useEffect } from "react";
-// import { auth, signOut } from "@/auth";
+import { auth, signOut } from "@/auth";
 import ProgressBar from "@/components/progressbar/progress";
 import AOS from 'aos';
 import'./styles.css'
