@@ -11,18 +11,17 @@ export default auth((req)=>{
 
     if(isApiAuthRoute){return}
 
-    if(!isLoggedIn)
+    if(isLoggedIn)
     {
         return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl))
     }
-
     if(!isLoggedIn && !isPublicRoute)
     {
         return Response.redirect(new URL("/", nextUrl))
     }
-
     return
 });
+
 export const config = {
     matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
 }

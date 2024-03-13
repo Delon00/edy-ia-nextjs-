@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { auth, signOut } from "@/auth";
 import ProgressBar from "@/components/progressbar/progress";
+import { LogoutAction } from '@/controller/LogoutController';
 import AOS from 'aos';
 import'./styles.css'
 import 'aos/dist/aos.css';
@@ -14,10 +15,6 @@ import Clock from '@/public/assets/images/temps.png';
 import Up from '@/public/assets/images/up.png';
 
 export default function Dashboard() {
-
-    
-
-
   return (
     <div className="dashboard">
       <div className="dashboard-navbar grid grid-cols-3 gap-4">
@@ -43,7 +40,7 @@ export default function Dashboard() {
           <p></p>
           <p></p>
           <p></p>
-          <button>Se déconnecte</button>
+          <button onClick={signOut}>Se déconnecter</button>          
         </div>
       </div>
       <div className="dashboard-section-a">
