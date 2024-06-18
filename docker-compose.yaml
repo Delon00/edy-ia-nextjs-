@@ -1,0 +1,29 @@
+version: '1.0.0'
+services:
+  app:
+    image: edyai
+    build:
+      context: ./
+      target: dev
+      dockerfile: Dockerfile
+    volumes:
+        - .:/app
+        - /app/node_modules
+        - /app/.next
+    ports:             
+      - "3000:3000"
+
+  db:
+    container_name: db 
+    image: postgres:13 
+    environment:
+      POSTGRES_USER: Deoth
+      POSTGRES_PASSWORD: tr3sd!v3rsPOSTGRES
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432" 
+    volumes:
+      - pgdata:/var/lib/postgresql/data 
+    
+volumes:
+  pgdata: {}

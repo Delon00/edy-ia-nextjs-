@@ -1,0 +1,19 @@
+.text-percent{
+    color:#FFC244;
+    font-weight: 600;
+    font-size: 13px;
+    margin: 0 0.5rem;
+}
+.brain{
+    width: 22px;
+    height: 22px;
+}
+.progress-line{
+    background-color: #FFC244;
+    border-radius: 9999px;
+}
+.bar-line{
+    width: 100%;
+    border-radius: 9999px;
+    background-color: #ffe2a8;
+}
