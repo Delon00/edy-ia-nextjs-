@@ -39,7 +39,7 @@ model Session {
 // Définition du modèle "User"
 model User {
   id                String       @id @default(cuid())
-  role_id           Int          @default(1)
+  role              String?          @default("user")
   nom               String?
   prenom            String?
   numero            String?
@@ -48,23 +48,14 @@ model User {
   email_verified    Boolean    @default(false)
   email_verified_at DateTime?
   password          String?
-  provider_id         String?
+  provider_id       String?
   adresse_ip        String?
   newsletters       Int       @default(1)
 
   accounts      Account[]
   sessions      Session[]
-  role              Role      @relation(fields: [role_id], references: [id])
 }
 
-// Définition du modèle "Role"
-model Role {
-  id       Int     @id @default(1)
-  name     String?
-  description     String?
-  
-  users    User[]
-}
 
 
 model VerificationToken {

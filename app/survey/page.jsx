@@ -3,8 +3,11 @@ import React, { useState, useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'tailwindcss/tailwind.css';
+import { useRouter } from 'next/navigation'
+import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
 
 export default function Survey() {
+    const router = useRouter()
     const [formData, setFormData] = useState({
         name: '',
         age: '',
@@ -43,24 +46,17 @@ export default function Survey() {
         }));
     };
 
-    const handleNext = () => {
-        setStep(step + 1);
-    };
-
-    const handlePrev = () => {
-        if (step > 0) {
-            setStep(step - 1);
-        }
-    };
+    const handleNext = () => {setStep(step + 1);};
+    const handlePrev = () => {if (step > 0) {setStep(step - 1);}};
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formData);
+        router.push('/dashboard');
+
     };
 
-    useEffect(() => {
-        AOS.init();
-    }, []);
+    useEffect(() => {AOS.init();}, []);
 
     const questions = [
         {

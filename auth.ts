@@ -5,6 +5,14 @@ import {prismadb} from "@/lib/prismadb"
 
 export const { handlers: { GET, POST },auth,signIn,signOut} 
   = NextAuth({
+    callbacks:{
+      async session({ session, user, token }) {
+        return session
+      },
+      async jwt({ token, user, account, profile, isNewUser }) {
+        return token
+      }
+    },
     adapter: PrismaAdapter(prismadb),
     session: { strategy: "jwt" },
     ...authConfig,

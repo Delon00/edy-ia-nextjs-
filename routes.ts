@@ -1,4 +1,12 @@
 /**
+ * Un tableau de route qui sont accessibles en 'auth'
+ * @type {string[]}
+ */
+export const authRoutes = [
+    "/survey",
+    "/dashboard"
+];
+/**
  * Un tableau de route qui sont accessibles en 'public'
  * @type {string[]}
  */

@@ -2,7 +2,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/react';
-
+import {auth} from '@/auth'
+import { SessionProvider } from "next-auth/react"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -21,11 +22,14 @@ export const metadata = {
 export const viewport = {themeColor: 'black',}
 
 
-export default function RootLayout({ children}) {
+export default async function RootLayout({ children}) {
+  const session = await auth()
   return (
+    <SessionProvider session={session}>
       <html lang="fr">
         <body className={inter.className}>{children}</body>
         <Analytics />
       </html> 
+    </SessionProvider>
   );
 }
